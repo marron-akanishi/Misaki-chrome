@@ -10,7 +10,7 @@ const getBookData = () => {
   return [title, date]
 }
 
-const appendMessage = () => {
+const appendMessage = (url, is_sure) => {
   // 挿入先
   var target = document.getElementById("item_title")
   // 表示枠
@@ -27,8 +27,8 @@ const appendMessage = () => {
   `
   // テキスト
   var text = document.createElement("a")
-  text.textContent = "Kotoriにこの書籍が所有登録されています"
-  text.href = "https://kotori.marron.work/book/1"
+  text.textContent = is_sure ? "Kotoriにこの書籍が所有登録されています" : "Kotoriにこの書籍が所有登録されている可能性があります"
+  text.href = url
   text.target = "_blank"
   text.style.color = "white";
   append.appendChild(text)
