@@ -1,0 +1,61 @@
+{
+  "name": "Misaki",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "description": "Chrome Extension for Kotori",
+  "permissions": [
+    "tabs",
+    "storage",
+    "https://kotori.marron.work/"
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": false
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": false
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.melonbooks.co.jp/detail/detail.php?product_id=*",
+        "https://www.melonbooks.co.jp/fromagee/detail/detail.php?product_id=*"
+      ],
+      "js": [
+        "melon.js",
+        "loader.js"
+      ]
+    },
+    {
+      "matches": [
+        "https://ec.toranoana.shop/tora/ec/item/*/",
+        "https://ec.toranoana.jp/tora_r/ec/item/*/"
+      ],
+      "js": [
+        "tora.js",
+        "loader.js"
+      ]
+    },
+    {
+      "matches": [
+        "https://shop.lashinbang.com/products/detail/*"
+      ],
+      "js": [
+        "lashin.js",
+        "loader.js"
+      ]
+    },
+    {
+      "matches": [
+        "https://www.suruga-ya.jp/product/detail/*"
+      ],
+      "js": [
+        "suruga.js",
+        "loader.js"
+      ]
+    }
+  ]
+}
