@@ -10,7 +10,7 @@ const normalizeStr = (str) => {
 window.onload = () => {
   const now_url = location.href.split("#")[0]
   const data = getBookData();
-  chrome.runtime.sendMessage({type: "get_list"}, (book_list) => {
+  chrome.runtime.sendMessage({type: "get_booklist"}, (book_list) => {
     let search = book_list.filter(function (item, index) {
       return item.url == now_url || (normalizeStr(item.title) == normalizeStr(data[0]) && item.published_at == data[1])
     });

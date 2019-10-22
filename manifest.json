@@ -10,9 +10,12 @@
   ],
   "background": {
     "scripts": [
-      "background.js"
+      "js/background.js"
     ],
     "persistent": false
+  },
+  "browser_action": {
+    "default_popup": "popup.html"
   },
   "options_ui": {
     "page": "options.html",
@@ -25,8 +28,8 @@
         "https://www.melonbooks.co.jp/fromagee/detail/detail.php?product_id=*"
       ],
       "js": [
-        "melon.js",
-        "loader.js"
+        "js/melon.js",
+        "js/loader.js"
       ]
     },
     {
@@ -35,8 +38,8 @@
         "https://ec.toranoana.jp/tora_r/ec/item/*/"
       ],
       "js": [
-        "tora.js",
-        "loader.js"
+        "js/tora.js",
+        "js/loader.js"
       ]
     },
     {
@@ -44,8 +47,8 @@
         "https://shop.lashinbang.com/products/detail/*"
       ],
       "js": [
-        "lashin.js",
-        "loader.js"
+        "js/lashin.js",
+        "js/loader.js"
       ]
     },
     {
@@ -53,8 +56,8 @@
         "https://www.suruga-ya.jp/product/detail/*"
       ],
       "js": [
-        "suruga.js",
-        "loader.js"
+        "js/suruga.js",
+        "js/loader.js"
       ]
     }
   ]

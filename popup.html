@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="jp">
+  <head>
+    <meta charset="UTF-8">
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/popup.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="tabs">
+      <input id="wishlist" type="radio" name="tab_item" checked>
+      <label class="tab_item" for="wishlist">ほしい物リスト</label>
+      <input id="search" type="radio" name="tab_item">
+      <label class="tab_item" for="search">書籍検索</label>
+      <input id="setting" type="radio" name="tab_item">
+      <label class="tab_item" for="setting">設定</label>
+      <div class="tab_content" id="wishlist_content">
+        <div class="row justify-content-center">
+          <div class="col-11">
+            <div id="search-form" class="mb-2">
+              <div class="input-group">
+                <input type="text" id="words" class="form-control">
+                <div class="input-group-append">
+                  <button type="button" class="btn btn-success">追加</button>
+                </div>
+              </div>
+            </div>
+            <table id="list" class="table">
+              <tr>
+                <th>タイトル</th>
+                <th style="width: 70px;">操作</th>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="tab_content" id="search_content">
+        <div class="row justify-content-center">
+          <div id="search-form" class="col-11">
+            <div class="input-group">
+              <input type="text" id="words" class="form-control">
+              <div class="input-group-append">
+                <button type="button" class="btn btn-primary">検索</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="search_result"></div>
+      </div>
+      <div class="tab_content" id="setting_content">
+        <div class="row justify-content-center">
+          <div id="search-form" class="col-11">
+            <div class="input-group">
+              <input type="text" id="words" class="form-control">
+              <div class="input-group-append">
+                <button type="button" class="btn btn-primary">検索</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="search_result"></div>
+      </div>
+    </div>
+    <script src="js/popup.js"></script>
+  </body>
+</html>
