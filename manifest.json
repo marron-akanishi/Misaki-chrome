@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "manifest_version": 2,
   "description": "Chrome Extension for Kotori",
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
   "permissions": [
     "tabs",
     "storage",
