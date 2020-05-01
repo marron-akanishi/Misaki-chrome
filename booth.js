@@ -44,7 +44,27 @@ const appendMessage = (url, is_sure) => {
   target.insertBefore(append, target.firstChild);
 };
 
-const appendCartTotal = () => {
-  // 挿入先
+const calcTotalCost = () => {
+  // 各レジごとの金額
+  let costList = document.getElementsByClassName("cart-box-subtotal-price");
+  costList = Array.from(costList);
+  // 合計金額の計算
+  const cost = costList.reduce((acc, cost) => {
+    const costVal = parseInt(cost.textContent.substr(2).replace(',',''), 10);
+    return acc + costVal;
+  }, 0);
+  return cost.toLocaleString();
+}
 
+const appendCartTotal = (cost) => {
+  // 挿入先
+  let target = document.querySelector("#js-carts-index > div.l-carts.container.static-3of4");
+  // テキスト
+  let append = document.createElement("div");
+  append.style.textAlign = "right";
+  append.style.fontSize = "15pt";
+  append.style.margin = "10px";
+  append.textContent = `合計金額：¥ ${cost}`;
+  // 追加
+  target.insertBefore(append, target.firstChild);
 }

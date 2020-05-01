@@ -33,7 +33,30 @@ const appendMessage = (url, is_sure) => {
   target.insertBefore(append, target.firstChild);
 };
 
-const appendCartTotal = () => {
-  // 挿入先
+const calcTotalCost = () => {
+  // 1冊ごとの金額
+  let costList = document.querySelectorAll("#container > div > div.clm_g > div > div.wishlist > table > tbody > tr");
+  costList = Array.from(costList);
+  costList = costList.filter((e) => {
+    return e.querySelector("td.action > form > p") != null;
+  });
+  // 合計金額の計算
+  const cost = costList.reduce((acc, cost) => {
+    const costVal = parseInt(cost.querySelector("td.item > p.price").textContent.substr(1).replace(',', ''), 10);
+    return acc + costVal;
+  }, 0);
+  return cost.toLocaleString();
+}
 
+const appendCartTotal = (cost) => {
+  // 挿入先
+  let target = document.querySelector("#container > div > div.clm_g > div > div.wishlist");
+  // テキスト
+  let append = document.createElement("div");
+  append.style.textAlign = "right";
+  append.style.fontSize = "15pt";
+  append.style.margin = "10px";
+  append.textContent = `ページ内合計金額：¥ ${cost}`;
+  // 追加
+  target.insertBefore(append, target.firstChild);
 }
