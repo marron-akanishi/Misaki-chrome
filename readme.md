@@ -24,6 +24,7 @@ Kotori向けChrome拡張機能
 - "https://shop.lashinbang.com/products/detail/*"
 - "https://www.suruga-ya.jp/product/detail/*"
 - "https://booth.pm/ja/items/*"
+- "https://\*.booth.pm/items/*"
 
 また、以下のURLではカートの合計金額が表示されます。
 
@@ -32,7 +33,10 @@ Kotori向けChrome拡張機能
 - "https://booth.pm/carts"
 
 ## 導入方法  
-Chromeの拡張機能ですが、パッケージ化されていないため現在はフォルダーでの導入になります。  
+Chrome ウェブストアにて公開しています。  
+[Misaki - Chrome ウェブストア](https://chrome.google.com/webstore/detail/misaki/fckolnnbohdhdnpleglckaednoiifpjp)  
+
+ウェブストアを経由しないで追加する方法は以下のとおりです。(開発者向け)  
 
 - このリポジトリをダウンロードまたはクローン  
 - Chromeの拡張機能画面においてデベロッパーモードを有効化  
