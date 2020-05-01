@@ -23,6 +23,13 @@ Kotori向けChrome拡張機能
 - "https://ec.toranoana.jp/tora_r/ec/item/*/"
 - "https://shop.lashinbang.com/products/detail/*"
 - "https://www.suruga-ya.jp/product/detail/*"
+- "https://booth.pm/ja/items/*"
+
+また、以下のURLではカートの合計金額が表示されます。
+
+- "https://www.melonbooks.co.jp/mypage/favorite.php"
+- "https://www.melonbooks.co.jp/fromagee/mypage/favorite.php"
+- "https://booth.pm/carts"
 
 ## 導入方法  
 Chromeの拡張機能ですが、パッケージ化されていないため現在はフォルダーでの導入になります。  

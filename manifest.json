@@ -31,7 +31,7 @@
       ],
       "js": [
         "melon.js",
-        "loader.js"
+        "detail.js"
       ]
     },
     {
@@ -41,7 +41,7 @@
       ],
       "js": [
         "tora.js",
-        "loader.js"
+        "detail.js"
       ]
     },
     {
@@ -50,7 +50,7 @@
       ],
       "js": [
         "lashin.js",
-        "loader.js"
+        "detail.js"
       ]
     },
     {
@@ -59,7 +59,36 @@
       ],
       "js": [
         "suruga.js",
-        "loader.js"
+        "detail.js"
+      ]
+    },
+    {
+      "matches": [
+        "https://booth.pm/ja/items/*",
+        "https://*.booth.pm/items/*"
+      ],
+      "js": [
+        "booth.js",
+        "detail.js"
+      ]
+    },
+    {
+      "matches": [
+        "https://www.melonbooks.co.jp/mypage/favorite.php",
+        "https://www.melonbooks.co.jp/fromagee/mypage/favorite.php"
+      ],
+      "js": [
+        "melon.js",
+        "cart.js"
+      ]
+    },
+    {
+      "matches": [
+        "https://booth.pm/carts"
+      ],
+      "js": [
+        "booth.js",
+        "cart.js"
       ]
     }
   ]
