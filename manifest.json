@@ -1,7 +1,7 @@
 {
   "name": "Misaki",
-  "version": "1.1.0",
-  "manifest_version": 2,
+  "version": "1.2.0",
+  "manifest_version": 3,
   "description": "Chrome Extension for Kotori",
   "icons": {
     "16": "icon.png",
@@ -10,14 +10,13 @@
   },
   "permissions": [
     "tabs",
-    "storage",
+    "storage"
+  ],
+  "host_permissions": [
     "https://kotori.marron.work/"
   ],
   "background": {
-    "scripts": [
-      "background.js"
-    ],
-    "persistent": false
+    "service_worker": "background.js"
   },
   "options_ui": {
     "page": "options.html",
@@ -36,7 +35,7 @@
     },
     {
       "matches": [
-        "https://ec.toranoana.shop/tora/ec/item/*/",
+        "https://ecs.toranoana.jp/tora/ec/item/*/",
         "https://ec.toranoana.jp/tora_r/ec/item/*/"
       ],
       "js": [
