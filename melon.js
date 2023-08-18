@@ -1,29 +1,28 @@
 const getBookData = () => {
   // 書籍タイトル
-  const title = document.querySelector("#description > table > tbody > tr:nth-child(1) > td").textContent;
+  const title = document.querySelector("h1.page-header").textContent;
   // 発行日
-  let date = document.querySelector("#description > table > tbody > tr:nth-child(5) > td").textContent;
-  date = date.replace(/\//g, "-");
+  const table = document.querySelectorAll("div.item-detail > div > div > table > tbody > tr");
+  let date = null;
+  table.forEach((row) => {
+    if (row.querySelector('th').textContent === "発行日") date = row.querySelector('td').textContent.replace('/', '-');
+  });
   return [title, date];
 }
 
 const appendMessage = (url, is_sure) => {
   // 挿入先
-  let target = document.getElementById("title");
+  const target = document.querySelector("div.item-header");
   // 表示枠
-  let append = document.createElement("div");
-  append.style.fontSize = "18px";
+  const append = document.createElement("div");
+  append.style.fontSize = "16px";
   append.style.padding = "5px 10px";
   append.style.border = "1px solid gray";
   append.style.borderRadius = "5px";
   append.style.backgroundColor = "#18bc9c";
-  append.style.margin = "5px 0";
-  append.style.fontFamily = `
-    -apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,"ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN",
-    "メイリオ",Meiryo,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"
-  `;
+  append.style.marginBottom = "12px";
   // テキスト
-  let text = document.createElement("a");
+  const text = document.createElement("a");
   text.textContent = is_sure ? "Kotoriにこの書籍が所有登録されています" : "Kotoriにこの書籍が所有登録されている可能性があります";
   text.href = url;
   text.target = "_blank";
